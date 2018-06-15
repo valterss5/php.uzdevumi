@@ -41,11 +41,48 @@ $main = new MainClass();
         </div>
         <div class="col-md-12">
              <span> <b>Uzdevuma rezultāts:</b></span>
+            <p>
+                <form action="index.php" method="post">
+                <input type="text" name="numberOne"/>
+                <input type="text" name="numberTwo"/>
+                <input type="submit" name="plus" value="+"/>
+            </form>
             <?php
-            $main->numberOne(5);
-            $main->numberTwo(4);
-            $main->getSum();
+            if(isset($_POST['plus'])){
+                $main->numberOne($_POST['numberOne']);
+                $main->numberTwo($_POST['numberTwo']);
+                $main->getSum();
+            }
             ?>
+            </p>
+
+        </div>
+        <div class="col-md-12">
+            <span> <b>4.Uzrakstīt php skriptu, kas nosaka virknes garumu.</b></span>
+        </div>
+        <div class="col-md-12">
+            <span> <b>Uzdevuma rezultāts:</b></span>
+            <?php
+            $main->getLength("Uzrakstīt php skriptu, kas nosaka virknes");
+            ?>
+        </div>
+        <div class="col-md-12">
+            <span> <b>5. Dots teikums: „Es mācos programmēt PHP valodā.” Uzrakstīt php skriptu, kas
+nosaka, kurā pozīcijā atrodas mazais un lielais "p" burts.</b></span>
+        </div>
+        <div class="col-md-12">
+            <span><b>Uzdevuma rezultāts: P -</b></span>
+            <?php
+            $main->getPos("Es mācos programmēt PHP valodā.","P");
+
+            ?>
+            <span>; p - </span>
+            <?php
+            $main->getPos("Es mācos programmēt PHP valodā.","p");
+            ?>
+        </div>
+        <div class="col-md-12">
+            <span><b>6. Uzrakstīt php skriptu, kas izvada šādu noformatētu tekstu: „PHP ir php <i>skriptu valoda ar kuras</i> <u>palīdzību tiek veidoti</u> MySql vaicājumi”.</b></span>
         </div>
     </div>
 </div>
